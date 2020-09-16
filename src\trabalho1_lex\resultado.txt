@@ -12030,3 +12030,363 @@ eep - Palavra reservada EEP
 
 !} - Bloco principal fim
 
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+
+eep - Palavra reservada EEP
+
+{! - Bloco principal inicio
+
+#ra INT - Declaração de variável
+
+: - Final de instrução
+
+#nome STR - Declaração de variável
+
+: - Final de instrução
+
+&setAluno - Declaração de função
+
+( - Passagem de parametros para função inicio
+
+@idade - Declaração de parametros em função
+
+; - Separação de parametros em função
+
+@nome - Declaração de parametros em função
+
+) - Passagem de parametros para função fim
+
+[ - Bloco função inicio
+
+~idade - Acessa a variável
+
+=> - Atribuição de valor
+
+@idade - Declaração de parametros em função
+
+: - Final de instrução
+
+~nome - Acessa a variável
+
+=> - Atribuição de valor
+
+@nome - Declaração de parametros em função
+
+: - Final de instrução
+
+] - Bloco função fim
+
+*setAluno - Chama a função
+
+( - Passagem de parametros para função inicio
+
+22 - Número inteiro
+
+; - Separação de parametros em função
+
+%Marcos% - String
+
+) - Passagem de parametros para função fim
+
+: - Final de instrução
+
+!} - Bloco principal fim
+

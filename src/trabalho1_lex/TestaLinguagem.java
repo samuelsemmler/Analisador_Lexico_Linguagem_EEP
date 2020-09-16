@@ -18,19 +18,23 @@ public class TestaLinguagem {
         // Creating the panel at bottom and adding components
         JPanel panel = new JPanel();
         JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
         JLabel chooseFileLabel = new JLabel("Enter text");
         JTextField chooseFileTextField = new JTextField(85);
         JButton chooseFileButton = new JButton("Choose File");
         JButton generateFileButton = new JButton("Generate Lexical File");
         generateFileButton.setVisible(false);
+        JButton creditsButton = new JButton("Credits");
         panel.add(chooseFileLabel);
         panel.add(chooseFileTextField);
         panel2.add(chooseFileButton);
         panel2.add(generateFileButton);
+        panel3.add(creditsButton);
 
         // Adding components to the frame
         frame.getContentPane().add(BorderLayout.NORTH, panel);
         frame.getContentPane().add(BorderLayout.CENTER, panel2);
+        frame.getContentPane().add(BorderLayout.SOUTH, panel3);
         frame.setVisible(true);
 
         //Adding events
@@ -56,6 +60,16 @@ public class TestaLinguagem {
             public void actionPerformed(ActionEvent actionEvent) {
                 generateLexicalFile(chooseFileTextField.getText());
                 showMessageDialog(null, "Process finished");
+            }
+        });
+        creditsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String credits = "" +
+                        "MARCOS MENGHINI VITTI\n" +
+                        "ROBERWAL JUNIOR\n" +
+                        "SAMUEL AUGUSTO SEMMLER\n";
+                showMessageDialog(null, credits);
             }
         });
     }

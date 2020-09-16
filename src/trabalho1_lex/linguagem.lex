@@ -12,7 +12,14 @@ private void imprimir(String token, String lexema) throws IOException {
 
     FileWriter myWriter = null;
         try {
-            myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+            boolean isLinux = true; //True if linux, false if windows
+
+            if(isLinux){
+                myWriter = new FileWriter("src/trabalho1_lex/resltuado.txt", true);
+            }
+            else{
+                myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+            }
         } catch (IOException ex) {
             System.out.println("Erro saindo...");
         }
