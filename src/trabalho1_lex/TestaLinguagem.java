@@ -1,26 +1,69 @@
 package trabalho1_lex;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javax.swing.JOptionPane.showMessageDialog;
+import java.io.*;
 
-/**
- *
- * @author Marcos Vitti
- */
 public class TestaLinguagem {
 
     public static void main(String[] args) throws IOException {
-        //D:\Program Files\NetBeansProjects\Analisador_Lexico_Linguagem_EEP\src\trabalho1_lex\exemplo
-        //String teste = "eep {!#ra INT:#nome STR:&setAluno(@idade; @nome) [~idade => @idade:~nome => @nome:]*setAluno(22; %Marcos%):!}";
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o caminho do arquivo: ");
-        String path = scanner.nextLine();
+        //Creating the frame
+        JFrame frame = new JFrame("Lexical Program");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1120, 800);
+
+        // Creating the panel at bottom and adding components
+        JPanel panel = new JPanel();
+        JPanel panel2 = new JPanel();
+        JLabel chooseFileLabel = new JLabel("Enter text");
+        JTextField chooseFileTextField = new JTextField(85);
+        JButton chooseFileButton = new JButton("Choose File");
+        JButton generateFileButton = new JButton("Generate Lexical File");
+        generateFileButton.setVisible(false);
+        panel.add(chooseFileLabel);
+        panel.add(chooseFileTextField);
+        panel2.add(chooseFileButton);
+        panel2.add(generateFileButton);
+
+        // Adding components to the frame
+        frame.getContentPane().add(BorderLayout.NORTH, panel);
+        frame.getContentPane().add(BorderLayout.CENTER, panel2);
+        frame.setVisible(true);
+
+        //Adding events
+        chooseFileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    JFileChooser fileChooser = new JFileChooser();
+                    fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                    if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+                        File selectedFile = fileChooser.getSelectedFile();
+                        chooseFileTextField.setText(selectedFile.getAbsolutePath());
+                        generateFileButton.setVisible(true);
+                    }
+                }
+                catch (Exception ex){
+                    showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        generateFileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                generateLexicalFile(chooseFileTextField.getText());
+                showMessageDialog(null, "Process finished");
+            }
+        });
+    }
+
+    private static void generateLexicalFile(String filePath){
         String content = "";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
             String line;
 
@@ -31,11 +74,9 @@ public class TestaLinguagem {
             System.out.println(content);
             Lexico lexico = new Lexico(new StringReader(content));
             lexico.yylex();
-            scanner.close();
 
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
     }
 }

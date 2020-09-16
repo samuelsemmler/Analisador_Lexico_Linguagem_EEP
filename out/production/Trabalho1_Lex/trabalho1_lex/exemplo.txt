@@ -1,0 +1,10 @@
+eep {!
+    #ra INT:
+    #nome STR:
+    
+    &setAluno(@idade; @nome) [
+        ~idade => @idade:
+        ~nome => @nome:
+    ]
+
+    *setAluno(22; %Marcos%):!}
