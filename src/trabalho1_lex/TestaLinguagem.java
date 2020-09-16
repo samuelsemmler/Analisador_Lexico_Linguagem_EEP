@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class TestaLinguagem {
 
     public static void main(String[] args) throws IOException {
+        //D:\Program Files\NetBeansProjects\Analisador_Lexico_Linguagem_EEP\src\trabalho1_lex\exemplo
         //String teste = "eep {!#ra INT:#nome STR:&setAluno(@idade; @nome) [~idade => @idade:~nome => @nome:]*setAluno(22; %Marcos%):!}";
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite o caminho do arquivo: ");

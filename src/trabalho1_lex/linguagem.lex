@@ -1,11 +1,23 @@
 package trabalho1_lex;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 %%
 
 %{
 
-private void imprimir(String token, String lexema) {
+private void imprimir(String token, String lexema) throws IOException {
     System.out.println(lexema + " - " + token + "\n\n");
+
+    FileWriter myWriter = null;
+        try {
+            myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+        } catch (IOException ex) {
+            System.out.println("Erro saindo...");
+        }
+    myWriter.write(lexema + " - " + token + "\n\n");
+    myWriter.close();
 }
 
 %}
