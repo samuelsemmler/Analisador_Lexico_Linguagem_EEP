@@ -5,15 +5,14 @@ import java.nio.file.Paths;
 
 public class Generator {
     public static void main(String[] args) {
-        boolean isLinux = true; //True if your operating system is linux, false if your system is windows
+        String so = String.valueOf(System.getProperty("os.name"));
 
         String rootPath = Paths.get("").toAbsolutePath().toString();
-        String subPath = "";
+        String subPath;
 
-        if(isLinux) {
-             subPath = "/src/trabalho1_lex/";
-        }
-        else {
+        if (so.substring(0, 1).equals("L")) {
+            subPath = "/src/trabalho1_lex/";
+        } else {
             subPath = "\\src\\trabalho1_lex\\";
         }
 

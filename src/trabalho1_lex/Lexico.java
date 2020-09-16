@@ -262,7 +262,13 @@ private void imprimir(String token, String lexema) throws IOException {
 
     FileWriter myWriter = null;
         try {
-            myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+            String so = String.valueOf(System.getProperty("os.name"));
+
+            if (so.substring(0, 1).equals("L")) {
+                myWriter = new FileWriter("src/trabalho1_lex/resultado.txt", true);
+            } else {
+                myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+            }
         } catch (IOException ex) {
             System.out.println("Erro saindo...");
         }
@@ -582,7 +588,7 @@ private void imprimir(String token, String lexema) throws IOException {
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-        //return null;
+        return;
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {

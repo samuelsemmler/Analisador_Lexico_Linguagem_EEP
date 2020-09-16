@@ -3,7 +3,6 @@ package trabalho1_lex;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import static javax.swing.JOptionPane.showMessageDialog;
 import java.io.*;
 
@@ -13,17 +12,22 @@ public class TestaLinguagem {
         //Creating the frame
         JFrame frame = new JFrame("Lexical Program");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1120, 800);
+        frame.setSize(500, 500);
 
         // Creating the panel at bottom and adding components
         JPanel panel = new JPanel();
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
-        JLabel chooseFileLabel = new JLabel("Enter text");
-        JTextField chooseFileTextField = new JTextField(85);
-        JButton chooseFileButton = new JButton("Choose File");
+
+        JLabel chooseFileLabel = new JLabel("Select program file");
+
+        JTextField chooseFileTextField = new JTextField();
+        chooseFileTextField.setVisible(false);
+
+        JButton chooseFileButton = new JButton("Choose");
         JButton generateFileButton = new JButton("Generate Lexical File");
         generateFileButton.setVisible(false);
+
         JButton creditsButton = new JButton("Credits");
         panel.add(chooseFileLabel);
         panel.add(chooseFileTextField);
@@ -38,50 +42,57 @@ public class TestaLinguagem {
         frame.setVisible(true);
 
         //Adding events
-        chooseFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    JFileChooser fileChooser = new JFileChooser();
-                    fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-                    if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-                        File selectedFile = fileChooser.getSelectedFile();
-                        chooseFileTextField.setText(selectedFile.getAbsolutePath());
-                        generateFileButton.setVisible(true);
-                    }
+        chooseFileButton.addActionListener((ActionEvent actionEvent) -> {
+            try {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fileChooser.getSelectedFile();
+                    chooseFileTextField.setText(selectedFile.getAbsolutePath());
+                    generateFileButton.setVisible(true);
                 }
-                catch (Exception ex){
-                    showMessageDialog(null, ex.getMessage());
-                }
+            } catch (HeadlessException ex) {
+                showMessageDialog(null, ex.getMessage());
             }
         });
-        generateFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                generateLexicalFile(chooseFileTextField.getText());
-                showMessageDialog(null, "Process finished");
-            }
+
+        generateFileButton.addActionListener((ActionEvent actionEvent) -> {
+            generateLexicalFile(chooseFileTextField.getText());
+            showMessageDialog(null, "Process finished");
         });
-        creditsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                String credits = "" +
-                        "MARCOS MENGHINI VITTI\n" +
-                        "ROBERWAL JUNIOR\n" +
-                        "SAMUEL AUGUSTO SEMMLER\n";
-                showMessageDialog(null, credits);
-            }
+
+        creditsButton.addActionListener((ActionEvent actionEvent) -> {
+            String credits = "" +
+                    "MARCOS MENGHINI VITTI\n" +
+                    "ROBERWAL JUNIOR\n" +
+                    "SAMUEL AUGUSTO SEMMLER\n";
+            showMessageDialog(null, credits);
         });
     }
 
-    private static void generateLexicalFile(String filePath){
+    private static void generateLexicalFile(String filePath) {
+
+        FileWriter myWriter = null;
+
+        String so = String.valueOf(System.getProperty("os.name"));
+
+        try {
+            if (so.substring(0, 1).equals("L")) {
+                myWriter = new FileWriter("src/trabalho1_lex/resultado.txt");
+            } else {
+                myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt");
+            }
+        } catch (IOException ex) {
+            showMessageDialog(null, "Error");
+        }
+
         String content = "";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
             String line;
 
-            while (( line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
                 content += line;
             }
 
