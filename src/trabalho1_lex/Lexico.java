@@ -265,9 +265,9 @@ private void imprimir(String token, String lexema) throws IOException {
             String so = String.valueOf(System.getProperty("os.name"));
 
             if (so.substring(0, 1).equals("L")) {
-                myWriter = new FileWriter("src/trabalho1_lex/resultado.txt", true);
+                myWriter = new FileWriter("resultado.txt", true);
             } else {
-                myWriter = new FileWriter("src\\trabalho1_lex\\resultado.txt", true);
+                myWriter = new FileWriter("resultado.txt", true);
             }
         } catch (IOException ex) {
             System.out.println("Erro saindo...");
